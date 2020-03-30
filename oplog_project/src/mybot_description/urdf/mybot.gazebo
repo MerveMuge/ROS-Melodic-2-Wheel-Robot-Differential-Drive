@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  <gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <legacyMode>false</legacyMode>
+    <updateRate>100</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftJoint>left_wheel_hinge</leftJoint>
+    <rightJoint>right_wheel_hinge</rightJoint>
+    <wheelSeparation>0.170</wheelSeparation>
+    <wheelDiameter>0.140</wheelDiameter>
+    <torque>36.9</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom_diffdrive</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <odometrySource>world</odometrySource>
+    <publishTf>1</publishTf>
+    <rosDebugLevel>na</rosDebugLevel>
+    <wheelAcceleration>0</wheelAcceleration>
+    <wheelTorque>5</wheelTorque>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <publishOdomTF>true</publishOdomTF>
+    <publishWheelTF>false</publishWheelTF>
+    <publishWheelJointState>false</publishWheelJointState>
+  </plugin>
+</gazebo>
+  <gazebo reference="chassis">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+</robot>
